@@ -1,0 +1,97 @@
+---
+
+# 🌱 Paleta de colores
+
+### 🎨 Colores principales
+
+* **Verde hoja (primary)** → `#2F7D32`
+  → transmite naturaleza, crecimiento, confianza
+
+* **Verde claro (secondary)** → `#66BB6A`
+  → sensación fresca y amigable
+
+* **Verde oscuro (accent fuerte)** → `#1B5E20`
+  → para headers, footer o CTAs importantes
+
+---
+
+### 🌿 Colores de apoyo
+
+* **Tierra (brown suave)** → `#8D6E63`
+  → conecta con lo orgánico
+
+* **Beige natural (background)** → `#F1F8E9`
+  → fondo relajado, no tan frío como blanco puro
+
+* **Arena clara (cards)** → `#FAFAF5`
+  → ideal para tarjetas de productos
+
+---
+
+### 🌸 Colores de acento (para destacar)
+
+* **Terracota** → `#D84315`
+  → botones de compra, promos
+
+* **Amarillo suave** → `#FDD835`
+  → detalles, badges, descuentos
+
+---
+
+### ⚫ Neutros
+
+* **Texto principal** → `#2E2E2E`
+* **Texto secundario** → `#6B6B6B`
+* **Bordes** → `#E0E0E0`
+
+---
+
+# ✍️ Tipografía (moderna + orgánica)
+
+### 🌿 Fuente principal (UI / cuerpo)
+
+* **Inter**
+
+  * limpia, muy legible
+  * ideal para e-commerce
+  * funciona perfecto en mobile
+
+---
+
+### 🌱 Fuente secundaria (títulos)
+
+* **Nunito**
+
+  * moderna pero amigable
+  * formas redondeadas → sensación natural
+
+---
+
+### 🌸 Fuente decorativa (opcional, branding)
+
+* **Playfair Display**
+
+  * elegante, para títulos grandes o hero sections
+  * ideal si querés un toque “premium vivero boutique”
+
+👉 usar con moderación
+
+---
+
+# 🧩 Combinación recomendada
+
+* **Body:** Inter
+* **Headings:** Nunito
+* **Hero / destacados:** Playfair Display
+
+---
+
+# 🎯 Ejemplo de uso práctico
+
+* Fondo general → Beige (`#F1F8E9`)
+* Navbar → Verde oscuro (`#1B5E20`)
+* Botón “Comprar” → Terracota (`#D84315`)
+* Precio → Verde hoja (`#2F7D32`)
+* Cards → Arena (`#FAFAF5`)
+
+---
