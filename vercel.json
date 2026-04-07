@@ -1,26 +1,36 @@
 {
-  "version": 2,
-  "outputDirectory": "public",
-  "functions": {
-    "api/index.php": {
-      "runtime": "vercel-php@0.7.4"
-    }
-  },
-  "routes": [
-    {
-      "src": "/build/(.*)",
-      "dest": "/public/build/$1"
+    "version": 2,
+    "outputDirectory": "public",
+    "functions": {
+        "api/index.php": { "runtime": "vercel-php@0.7.4" }
     },
-    {
-      "src": "/(.*)",
-      "dest": "/api/index.php"
+    "routes": [
+        {
+            "src": "/build/(.*)",
+            "dest": "/public/build/$1"
+        },
+        {
+            "src": "/(favicon.ico|favicon.png|robots.txt)",
+            "dest": "/public/$1"
+        },
+        {
+            "src": "/css/(.*)",
+            "dest": "/public/css/$1"
+        },
+        {
+            "src": "/js/(.*)",
+            "dest": "/public/js/$1"
+        },
+        {
+            "src": "/(.*)",
+            "dest": "/api/index.php"
+        }
+    ],
+    "env": {
+        "APP_ENV": "production",
+        "APP_DEBUG": "true",
+        "VIEW_COMPILED_PATH": "/tmp",
+        "CACHE_DRIVER": "array",
+        "SESSION_DRIVER": "cookie"
     }
-  ],
-  "env": {
-    "APP_ENV": "production",
-    "APP_DEBUG": "true",
-    "VIEW_COMPILED_PATH": "/tmp",
-    "CACHE_DRIVER": "array",
-    "SESSION_DRIVER": "cookie"
-  }
 }
