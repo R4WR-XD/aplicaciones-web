@@ -1,0 +1,29 @@
+.sidebar {
+  width: 240px;
+
+  background: #E8E2D0;
+
+  border-radius: 16px;
+
+  padding: 1.5rem;
+
+  height: fit-content;
+}
+
+.sidebar h3 {
+  color: #1B5E20;
+  margin-bottom: 1rem;
+}
+
+.sidebar li {
+  padding: .8rem 0;
+
+  cursor: pointer;
+
+  transition: .2s;
+}
+
+.sidebar li:hover {
+  color: #1B5E20;
+  transform: translateX(5px);
+}

@@ -1,0 +1,40 @@
+.hero {
+  height: 300px;
+
+  border-radius: 20px;
+
+  background:
+    linear-gradient(
+      rgba(0,0,0,.35),
+      rgba(0,0,0,.35)
+    ),
+    url("https://i.pinimg.com/736x/8f/70/e8/8f70e84ac2ad81e7d12e6987e332dac3.jpg");
+
+  background-size: cover;
+  background-position: center;
+
+  display: flex;
+  align-items: center;
+
+  color: white;
+
+  padding: 3rem;
+
+  margin-bottom: 2rem;
+}
+
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+
+  font-size: 3.5rem;
+
+  font-weight: 700;
+
+  line-height: 1.1;
+}
+
+.hero p {
+  font-family: 'Inter', sans-serif;
+
+  font-size: 1.2rem;
+}

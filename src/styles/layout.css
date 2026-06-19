@@ -1,0 +1,13 @@
+.layout {
+    display: flex;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.sidebar {
+    padding: 1rem;
+}
+
+.content {
+    width: 100%;
+}
