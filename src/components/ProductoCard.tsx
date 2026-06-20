@@ -11,7 +11,7 @@ export default function ProductoCard({ producto }: Props) {
   return (
     <div className="product-card">
       <img
-        src={producto.imagen || IMAGEN_DEFAULT}
+        src={producto.img_url || IMAGEN_DEFAULT}
         alt={producto.nombre}
         onError={(e) => {
           (e.currentTarget as HTMLImageElement).src = IMAGEN_DEFAULT;
