@@ -38,17 +38,15 @@ h3 {
 
 .product-card {
   background: #FAFAF5;
-
   border-radius: 16px;
-
   overflow: hidden;
-
-  box-shadow:
-    0 4px 12px rgba(0,0,0,.08);
+  box-shadow: 0 4px 12px rgba(0,0,0,.08);
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .product-card:hover {
   transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0,0,0,.14);
 }
 
 .product-card img {
