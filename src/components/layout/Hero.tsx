@@ -1,19 +1,25 @@
- import "../../styles/hero.css";
- 
- export default function Hero(){
-    return(
-        <section className="hero">
+import "../../styles/hero.css";
 
-        <div>
-            <h1>Decorá tu hogar con naturaleza</h1>
+export default function Hero() {
+  return (
+    <section className="hero">
+      <div className="hero-bg" />
+      <div className="hero-gradient" />
 
-            <p>
-            Variedad de especies para interior y exterior.
-            </p>
+      <div className="hero-content">
+        <span className="hero-eyebrow">Vivero · Plantas &amp; Jardín</span>
 
-            <button>Comprar ahora</button>
+        <h1>Llevá la naturaleza a tu hogar.</h1>
+
+        <p className="hero-sub">
+          Selección de plantas de interior y exterior, cactus y suculentas. Cuidadas desde el semillero.
+        </p>
+
+        <div className="hero-ctas">
+          <button className="hero-btn-primary">Explorar plantas</button>
+          <button className="hero-btn-secondary">Ver novedades</button>
         </div>
-
-        </section>
-    )
- }
+      </div>
+    </section>
+  );
+}

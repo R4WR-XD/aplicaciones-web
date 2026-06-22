@@ -1,19 +1,39 @@
- import "../../styles/sidebar.css";
- 
- export default function Header(){
- 
-    return(
-        <aside className="sidebar">
+import "../../styles/sidebar.css";
 
-        <h3>Categorías</h3>
+interface Tag {
+  id: number;
+  nombre: string;
+}
 
-        <ul>
-            <li>🌱 Interior</li>
-            <li>☀️ Exterior</li>
-            <li>🌵 Cactus</li>
-            <li>🪴 Suculentas</li>
-        </ul>
+interface Props {
+  tags: Tag[];
+  selectedTag: number | null;
+  onSelect: (id: number | null) => void;
+}
 
-        </aside>
-    )
- }
+export default function Categories({ tags, selectedTag, onSelect }: Props) {
+  return (
+    <nav className="categories-bar" aria-label="Categorías">
+      <ul className="categories-list">
+        <li>
+          <button
+            className={`category-pill${selectedTag === null ? " active" : ""}`}
+            onClick={() => onSelect(null)}
+          >
+            Todas
+          </button>
+        </li>
+        {tags.map((tag) => (
+          <li key={tag.id}>
+            <button
+              className={`category-pill${selectedTag === tag.id ? " active" : ""}`}
+              onClick={() => onSelect(tag.id)}
+            >
+              {tag.nombre}
+            </button>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  );
+}

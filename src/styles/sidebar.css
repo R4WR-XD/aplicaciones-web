@@ -1,29 +1,53 @@
-.sidebar {
-  width: 240px;
-
-  background: #E8E2D0;
-
-  border-radius: 16px;
-
-  padding: 1.5rem;
-
-  height: fit-content;
+.categories-bar {
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+  padding: 0 2rem;
+  overflow-x: auto;
+  scrollbar-width: none;
 }
 
-.sidebar h3 {
-  color: #1B5E20;
-  margin-bottom: 1rem;
+.categories-bar::-webkit-scrollbar {
+  display: none;
 }
 
-.sidebar li {
-  padding: .8rem 0;
+.categories-list {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.875rem 0;
+  white-space: nowrap;
+}
 
+.category-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 1rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: transparent;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--muted);
   cursor: pointer;
-
-  transition: .2s;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+  white-space: nowrap;
 }
 
-.sidebar li:hover {
-  color: #1B5E20;
-  transform: translateX(5px);
+.category-pill:hover {
+  background: var(--sage-bg);
+  color: var(--forest);
+  border-color: var(--border);
+}
+
+.category-pill.active {
+  background: var(--forest);
+  color: var(--white);
+  border-color: var(--forest);
+}
+
+/* ── Responsive ──────────────────────────────────── */
+@media (max-width: 600px) {
+  .categories-bar {
+    padding: 0 1rem;
+  }
 }

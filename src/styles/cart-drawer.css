@@ -1,0 +1,229 @@
+.drawer-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 199;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease-out;
+}
+
+.drawer-overlay.open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.cart-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100dvh;
+  width: 400px;
+  background: var(--white);
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+  transform: translateX(100%);
+  transition: transform 0.25s ease-out;
+  box-shadow: -4px 0 24px rgba(0, 0, 0, 0.12);
+}
+
+.cart-drawer.open {
+  transform: translateX(0);
+}
+
+/* Header */
+.drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+.drawer-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--forest);
+}
+
+.drawer-close {
+  background: none;
+  border: none;
+  font-size: 1rem;
+  color: var(--muted);
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  transition: background 0.15s, color 0.15s;
+}
+
+.drawer-close:hover {
+  background: var(--sage-bg);
+  color: var(--ink);
+}
+
+/* Último producto agregado */
+.drawer-last-added {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  padding: 1.25rem 1.5rem;
+  background: var(--sage-bg);
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+.drawer-last-added img {
+  width: 72px;
+  height: 72px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+.drawer-last-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.drawer-last-nombre {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.drawer-last-calc {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.drawer-last-calc strong {
+  color: var(--forest);
+  font-weight: 700;
+}
+
+/* Resumen del carrito */
+.drawer-summary-header {
+  padding: 1rem 1.5rem 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  flex-shrink: 0;
+}
+
+.drawer-items {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.drawer-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.875rem;
+}
+
+.drawer-item-nombre {
+  flex: 1;
+  color: var(--ink);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.drawer-item-qty {
+  color: var(--muted);
+  font-size: 0.8rem;
+  flex-shrink: 0;
+}
+
+.drawer-item-sub {
+  font-weight: 600;
+  color: var(--forest);
+  font-variant-numeric: tabular-nums;
+  flex-shrink: 0;
+}
+
+/* Total */
+.drawer-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--ink);
+  border-top: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+.drawer-total span:last-child {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.25rem;
+  color: var(--forest);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Acciones */
+.drawer-actions {
+  display: flex;
+  gap: 0.75rem;
+  padding: 1rem 1.5rem 1.5rem;
+  flex-shrink: 0;
+}
+
+.drawer-btn-secondary {
+  flex: 1;
+  background: transparent;
+  border: 1.5px solid var(--border);
+  color: var(--ink);
+  padding: 0.75rem;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.drawer-btn-secondary:hover {
+  border-color: var(--canopy);
+  background: var(--sage-bg);
+}
+
+.drawer-btn-primary {
+  flex: 1;
+  background: var(--forest);
+  border: none;
+  color: var(--white);
+  padding: 0.75rem;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition: background 0.15s;
+}
+
+.drawer-btn-primary:hover {
+  background: var(--canopy);
+}
+
+/* ── Responsive ──────────────────────────────────── */
+@media (max-width: 480px) {
+  .cart-drawer {
+    width: 100%;
+  }
+}

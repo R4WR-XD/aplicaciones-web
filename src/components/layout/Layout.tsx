@@ -1,7 +1,6 @@
 import "../../styles/layout.css";
 
 import Header from "./Header";
-import Sidebar from "./Sidebar";
 import Footer from "./Footer";
 import type { ReactNode } from "react";
 
@@ -11,18 +10,10 @@ interface Props {
 
 export default function Layout({ children }: Props) {
   return (
-    <>
+    <div className="page-wrapper">
       <Header />
-
-      <div className="layout">
-        <Sidebar />
-
-        <main className="content">
-          {children}
-        </main>
-      </div>
-
+      <main>{children}</main>
       <Footer />
-    </>
+    </div>
   );
 }
