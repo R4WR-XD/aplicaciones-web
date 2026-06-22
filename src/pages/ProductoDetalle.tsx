@@ -52,10 +52,13 @@ export default function ProductoDetalle() {
   const sinStock = producto.stock === 0;
 
   function handleAddToCart() {
+    if (!producto) return;
+
     if (!cliente) {
       navigate("/login");
       return;
     }
+
     addItem(producto, cantidad);
     setCantidad(1);
   }
