@@ -8,7 +8,7 @@ import "../styles/carrito.css";
 const IMAGEN_DEFAULT =
   "https://placehold.co/80x80/e8f5e9/2d5a27?text=Planta";
 
-export default async function Carrito() {
+export default function Carrito() {
   const { cliente } = useAuth();
   const { items, removeItem, updateQuantity, total, itemCount } = useCart();
   const navigate = useNavigate();
