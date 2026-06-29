@@ -16,26 +16,39 @@ export default function Success() {
   const { clearCart } = useCart();
   const [searchParams] = useSearchParams();
   const [order, setOrder] = useState<OrderSnapshot | null>(null);
+  const [ventaError, setVentaError] = useState<string | null>(null);
 
   const paymentId = searchParams.get("payment_id") || searchParams.get("collection_id");
   const invoiceNumber = paymentId ? `VIV-${paymentId}` : `VIV-${Date.now()}`;
 
   useEffect(() => {
     const raw = sessionStorage.getItem("vivero_last_order");
+    console.log("[Success] snapshot en sessionStorage:", raw);
+
     if (raw) {
       const parsed: OrderSnapshot = JSON.parse(raw);
       setOrder(parsed);
       sessionStorage.removeItem("vivero_last_order");
 
       const fecha = new Date(parsed.date).toISOString().split("T")[0];
-      api.post("/ventas", {
+      const body = {
         fecha,
         productos: parsed.items.map(({ producto, cantidad }) => ({
           idproducto: producto.id,
           cantidad,
           preciounitario: producto.precio,
         })),
-      }).catch(console.error);
+      };
+      console.log("[Success] POST /ventas body:", body);
+
+      api.post("/ventas", body)
+        .then((res) => console.log("[Success] venta guardada:", res.data))
+        .catch((err) => {
+          console.error("[Success] error al guardar venta:", err.response?.data ?? err.message);
+          setVentaError("No se pudo registrar la compra en el sistema.");
+        });
+    } else {
+      console.warn("[Success] no se encontró snapshot del pedido en sessionStorage");
     }
     clearCart();
   }, []);
@@ -60,6 +73,12 @@ export default function Success() {
           <h1 className="success-title">¡Pago aprobado!</h1>
           <p className="success-subtitle">Tu compra se realizó correctamente.</p>
         </div>
+
+        {ventaError && (
+          <p style={{ color: "#b91c1c", textAlign: "center", marginBottom: "1rem", fontSize: "0.85rem" }}>
+            {ventaError}
+          </p>
+        )}
 
         <div className="factura">
           <div className="factura-header">
