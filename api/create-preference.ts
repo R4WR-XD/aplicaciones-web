@@ -1,5 +1,5 @@
-export default async function handler(req: any, res: any) {
-  return res.status(200).json({
+export async function GET() {
+  return Response.json({
     mensaje: "La función funciona",
   });
 }
