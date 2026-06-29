@@ -36,7 +36,7 @@ export default function Success() {
         productos: parsed.items.map(({ producto, cantidad }) => ({
           idproducto: producto.id,
           cantidad,
-          preciounitario: producto.precio,
+          preciounitario: Number(producto.precio),
         })),
       };
       console.log("[Success] POST /ventas body:", body);
