@@ -28,6 +28,13 @@ export async function POST(request: Request) {
             })),
 
             binary_mode: true,
+
+            back_urls: {
+            success: "https://aplicaciones-web-gules.vercel.app/success",
+            failure: "https://aplicaciones-web-gules.vercel.app/failure",
+            pending: "https://aplicaciones-web-gules.vercel.app/pending",
+            },
+            auto_return: "approved",
         },
     });
 
