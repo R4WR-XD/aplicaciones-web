@@ -1,0 +1,262 @@
+.success-page {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 5rem;
+}
+
+/* Header con checkmark */
+.success-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.success-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--forest);
+  color: #fff;
+  font-size: 2rem;
+  line-height: 64px;
+  margin: 0 auto 1.25rem;
+}
+
+.success-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--forest);
+  margin: 0 0 0.5rem;
+}
+
+.success-subtitle {
+  color: var(--muted);
+  font-size: 1rem;
+  margin: 0;
+}
+
+/* Factura */
+.factura {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 2rem;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+}
+
+.factura-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.factura-marca {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.factura-marca-nombre {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--forest);
+}
+
+.factura-marca-tagline {
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.factura-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.2rem;
+}
+
+.factura-numero {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.factura-fecha {
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.factura-divider {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 1.25rem 0;
+}
+
+/* Tabla de productos */
+.factura-tabla {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.factura-tabla th {
+  text-align: left;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+  padding-bottom: 0.75rem;
+}
+
+.factura-tabla td {
+  padding: 0.6rem 0;
+  color: var(--ink);
+  border-bottom: 1px solid var(--border);
+}
+
+.factura-tabla tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.col-producto { width: 45%; }
+.col-cant     { width: 12%; text-align: center; }
+.col-precio   { width: 22%; text-align: right; }
+.col-subtotal { width: 21%; text-align: right; font-weight: 600; }
+
+.factura-tabla th.col-cant,
+.factura-tabla th.col-precio,
+.factura-tabla th.col-subtotal {
+  text-align: right;
+}
+
+.factura-tabla th.col-cant {
+  text-align: center;
+}
+
+/* Totales */
+.factura-totales {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: flex-end;
+}
+
+.factura-total-row {
+  display: flex;
+  gap: 2.5rem;
+  font-size: 0.9rem;
+  color: var(--ink);
+}
+
+.factura-total-row span:first-child {
+  color: var(--muted);
+  min-width: 80px;
+  text-align: right;
+}
+
+.factura-gratis {
+  color: var(--forest);
+  font-weight: 500;
+}
+
+.factura-total-final {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin-top: 0.5rem;
+}
+
+.factura-total-final span:first-child {
+  color: var(--ink) !important;
+}
+
+.factura-total-final span:last-child {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  color: var(--forest);
+  font-variant-numeric: tabular-nums;
+}
+
+.factura-sin-datos {
+  color: var(--muted);
+  text-align: center;
+  padding: 1.5rem 0;
+  font-size: 0.9rem;
+}
+
+.factura-footer {
+  margin-top: 1.5rem;
+  font-size: 0.75rem;
+  color: var(--muted);
+  text-align: center;
+  font-style: italic;
+}
+
+/* Botón de acción */
+.success-actions {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.success-btn-primary {
+  display: inline-block;
+  background: var(--forest);
+  color: #fff;
+  text-decoration: none;
+  padding: 0.875rem 2rem;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: background 0.15s;
+}
+
+.success-btn-primary:hover {
+  background: var(--canopy);
+}
+
+/* Failure state */
+.failure-icon {
+  background: #b91c1c;
+}
+
+.failure-title {
+  color: #b91c1c;
+}
+
+.failure-card {
+  text-align: center;
+}
+
+.failure-msg {
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 520px) {
+  .factura {
+    padding: 1.5rem 1rem;
+  }
+
+  .factura-header {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .factura-meta {
+    align-items: flex-start;
+  }
+
+  .col-precio {
+    display: none;
+  }
+
+  .col-producto { width: 55%; }
+  .col-cant     { width: 15%; }
+  .col-subtotal { width: 30%; }
+}

@@ -30,6 +30,11 @@ export default async function Carrito() {
 
     const data = await response.json();
 
+    sessionStorage.setItem(
+      "vivero_last_order",
+      JSON.stringify({ items, total, date: new Date().toISOString() })
+    );
+
     window.location.href = data.init_point;
   }
 
