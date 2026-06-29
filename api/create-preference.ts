@@ -18,15 +18,17 @@ export async function POST(request: Request) {
     const { items } = body;
 
     const response = await preference.create({
-      body: {
-        items: items.map((item) => ({
-          id: item.producto.id.toString(),
-          title: item.producto.nombre,
-          quantity: item.cantidad,
-          currency_id: "ARS",
-          unit_price: Number(item.producto.precio),
-        })),
-      },
+        body: {
+            items: items.map((item: any) => ({
+            id: item.producto.id.toString(),
+            title: item.producto.nombre,
+            quantity: item.cantidad,
+            currency_id: "ARS",
+            unit_price: Number(item.producto.precio),
+            })),
+
+            binary_mode: true,
+        },
     });
 
     return Response.json({
