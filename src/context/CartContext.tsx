@@ -1,11 +1,7 @@
 import { createContext, useContext, useEffect, useState, type ReactNode } from "react";
 import type { Producto } from "../types/Producto";
 import { useAuth } from "./AuthContext";
-
-export interface CartItem {
-  producto: Producto;
-  cantidad: number;
-}
+import type { CartItem } from "../types/Cart";
 
 interface CartContextValue {
   items: CartItem[];

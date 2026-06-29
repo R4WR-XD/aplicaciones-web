@@ -8,7 +8,7 @@ import "../styles/carrito.css";
 const IMAGEN_DEFAULT =
   "https://placehold.co/80x80/e8f5e9/2d5a27?text=Planta";
 
-export default function Carrito() {
+export default async function Carrito() {
   const { cliente } = useAuth();
   const { items, removeItem, updateQuantity, total, itemCount } = useCart();
   const navigate = useNavigate();
@@ -18,6 +18,20 @@ export default function Carrito() {
   }, [cliente, navigate]);
 
   if (!cliente) return null;
+
+  const handleCheckout = async () => {
+    const response = await fetch("/api/create-preference", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ items }),
+    });
+
+    const data = await response.json();
+
+    window.location.href = data.init_point;
+  }
 
   return (
     <Layout>
@@ -89,7 +103,10 @@ export default function Carrito() {
                 <span>Total</span>
                 <span>${total}</span>
               </div>
-              <button className="carrito-checkout-btn">
+              <button
+                className="carrito-checkout-btn"
+                onClick={handleCheckout}
+              >
                 Finalizar compra →
               </button>
             </div>

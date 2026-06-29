@@ -1,10 +1,5 @@
-export async function GET() {
-  return Response.json({
-    mensaje: "La función funciona",
-  });
-}
-
-/* import { MercadoPagoConfig, Preference } from "mercadopago";
+import { MercadoPagoConfig, Preference } from "mercadopago";
+import type { CartItem } from "../src/types/Cart";
 
 const client = new MercadoPagoConfig({
   accessToken: process.env.MP_ACCESS_TOKEN!,
@@ -12,17 +7,19 @@ const client = new MercadoPagoConfig({
 
 const preference = new Preference(client);
 
-export default async function handler(req: any, res: any) {
-  if (req.method !== "POST") {
-    return res.status(405).json({ error: "Método no permitido" });
-  }
+type CreatePreferenceBody = {
+  items: CartItem[];
+};
 
+export async function POST(request: Request) {
   try {
-    const { items } = req.body;
+    const body = (await request.json()) as CreatePreferenceBody;
+
+    const { items } = body;
 
     const response = await preference.create({
       body: {
-        items: items.map((item: any) => ({
+        items: items.map((item) => ({
           id: item.producto.id.toString(),
           title: item.producto.nombre,
           quantity: item.cantidad,
@@ -32,14 +29,16 @@ export default async function handler(req: any, res: any) {
       },
     });
 
-    return res.status(200).json({
+    return Response.json({
       id: response.id,
       init_point: response.init_point,
     });
   } catch (error) {
     console.error(error);
-    return res.status(500).json({
-      error: "Error al crear la preferencia",
-    });
+
+    return Response.json(
+      { error: "Error al crear la preferencia" },
+      { status: 500 }
+    );
   }
-} */
+}
