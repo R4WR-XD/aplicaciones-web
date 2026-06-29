@@ -1,73 +1,53 @@
-# React + TypeScript + Vite
+# Vivero — Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+E-commerce de plantas. Proyecto universitario. Permite explorar productos, agregarlos al carrito y completar una compra via MercadoPago.
 
-Currently, two official plugins are available:
+**Web:** https://aplicaciones-web-gules.vercel.app
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+**Repositorio del backend:** https://github.com/SorrowOfSpira/aplicacionesWeb
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Tecnologías
 
-## Expanding the ESLint configuration
+- React 19 + TypeScript + Vite
+- React Router v7
+- Axios
+- MercadoPago SDK
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Funcionalidades
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- Listado de productos con filtrado por categorías y paginación
+- Detalle de producto
+- Carrito persistente por usuario (localStorage)
+- Drawer de carrito con feedback al agregar ítems
+- Registro e inicio de sesión con JWT
+- Checkout que genera preferencia de MercadoPago y redirige al pago
+- Páginas de resultado: éxito y fallo.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Usuarios de prueba
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### App
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+| Campo | Valor |
+|-------|-------|
+| Email | `test@test.com` |
+| Contraseña | `testtest` |
+
+Usar para iniciar sesión y probar el carrito de compras.
+
+### MercadoPago (comprador de prueba)
+
+| Campo | Valor |
+|-------|-------|
+| Usuario | `TESTUSER2539648852025282151` |
+| Contraseña | `EOUOBFINmZ` |
+| Código de verificación | `612367` |
+| País | Argentina |
+
+Usar estos datos en el checkout de MercadoPago para simular una compra.
+
