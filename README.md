@@ -19,12 +19,12 @@ E-commerce de plantas. Proyecto universitario. Permite explorar productos, agreg
 
 ## Funcionalidades
 
-- Listado de productos con filtrado por categorías y paginación
-- Detalle de producto
-- Carrito persistente por usuario (localStorage)
-- Drawer de carrito con feedback al agregar ítems
-- Registro e inicio de sesión con JWT
-- Checkout que genera preferencia de MercadoPago y redirige al pago
+- Listado de productos con filtrado por categorías y paginación.
+- Detalle de producto.
+- Carrito persistente por usuario (localStorage).
+- Drawer de carrito con feedback al agregar ítems.
+- Registro e inicio de sesión con JWT.
+- Checkout que genera preferencia de MercadoPago y redirige al pago.
 - Páginas de resultado: éxito y fallo.
 
 ---
